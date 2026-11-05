@@ -1,0 +1,5 @@
+subject,pelvis_tx,pelvis_ty,pelvis_tilt,hip_flexion_r,hip_flexion_l,knee_angle_r,knee_angle_l,ankle_angle_r,ankle_angle_l,flex_extension
+1106151,9.5,7.5,6.0,6.5,6.5,9.0,8.0,7.5,6.5,5.5
+1106231,10.5,11.0,9.0,9.0,9.5,10.5,11.5,8.5,9.0,8.5
+1106301,8.5,10.5,10.0,10.5,10.5,11.5,11.5,8.0,7.0,9.5
+1110111,7.0,8.5,8.5,8.0,8.5,9.0,9.0,5.0,5.0,7.5

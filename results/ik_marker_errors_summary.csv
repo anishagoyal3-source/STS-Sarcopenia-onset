@@ -1,0 +1,5 @@
+subject,window,mean_RMS_cm,max_RMS_cm,max_marker_error_cm,worst_marker,worst_marker_mean_err_cm,frames_max_over_4cm_pct
+1106151,full trial,1.31,1.91,4.38,RKNE,2.6,11.9
+1106231,full trial,1.45,1.82,4.36,CLAV,3.12,19.3
+1106301,full trial,2.56,3.36,5.62,RTOE,3.74,61.5
+1110111,full trial,1.62,2.19,5.4,LMT5,3.43,70.0

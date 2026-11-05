@@ -1,0 +1,13 @@
+Subject,Muscle strength,Hip (R / L),Knee (R / L),Ankle (R / L),First limb (onset),Non-converged frames (all levels)
+1106151,Unscaled,50% / 65%,55% / 60%,– / –,Right (50%),0
+1106151,Scaled by (m/m_ref)^2/3,45% / 55%,45% / 55%,– / –,Right (45%),0
+1106151,Scaled by m/m_ref (equal per kg),35% / 55%,40% / 50%,70% / 70%,Right (35%),0
+1106231,Unscaled,30% / 10%,30% / 10%,– / –,Left (10%),4
+1106231,Scaled by (m/m_ref)^2/3,35% / 20%,35% / 15%,– / –,Left (15%),2
+1106231,Scaled by m/m_ref (equal per kg),35% / 20%,35% / 20%,– / –,Left (20%),2
+1106301,Unscaled,15% / 15%,15% / 10%,– / 65%,Left (10%),51
+1106301,Scaled by (m/m_ref)^2/3,25% / 25%,25% / 20%,– / 65%,Left (20%),46
+1106301,Scaled by m/m_ref (equal per kg),30% / 30%,30% / 25%,– / 70%,Left (25%),45
+1110111,Unscaled,30% / 45%,30% / 30%,– / 70%,Both (30%),3
+1110111,Scaled by (m/m_ref)^2/3,40% / 50%,35% / 40%,– / –,Right (35%),2
+1110111,Scaled by m/m_ref (equal per kg),40% / 50%,40% / 40%,– / –,Both (40%),2

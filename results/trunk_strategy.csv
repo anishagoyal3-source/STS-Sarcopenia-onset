@@ -1,0 +1,5 @@
+subject,seated_incl_deg,peak_incl_deg,t_peak_after_seatoff_ms,incl_at_seatoff_deg,peak_hip_ext_both_legs_Nm,peak_knee_ext_both_legs_Nm,knee_to_hip_peak_ratio
+1106151,7.1,40.8,89,39.2,94.8,99.5,1.05
+1106231,9.0,56.7,108,52.4,188.7,162.6,0.86
+1106301,6.4,38.3,98,37.2,158.0,220.5,1.4
+1110111,10.4,47.5,111,44.7,142.4,182.0,1.28
