@@ -11,7 +11,7 @@ figures/            scripts that draw Figures 1-3, and the PNGs used in the pape
 results/            CSV outputs behind every table and figure
 data/
   Subject_<ID>/     setup files, derived kinematics/kinetics and modified models for each subject
-  static_optimization_results.zip   every Static Optimization force output and log used in the paper
+  static_optimization_results_*.zip   every Static Optimization force output and log used in the paper (two parts; plus `static_optimization_results_sensitivity.zip` for the filter/window sensitivity runs)
 ```
 
 ## Requirements
@@ -32,7 +32,7 @@ Set it up as follows:
    - the trial files `<ID>_STS05.trc` and `<ID>_STS05_kinetics.mot`
    - the scaled model, saved as `Subject_<ID>_scaled_model.osim`
 4. Copy the contents of `data/Subject_<ID>/` into the same folder.
-5. (Optional) Unzip `data/static_optimization_results.zip` in the repository root. This restores every Static Optimization result, so you can skip step 6 of the pipeline.
+5. (Optional) Unzip the `data/static_optimization_results_*.zip` files in the repository root. This restores every Static Optimization result, so you can skip step 6 of the pipeline.
 
 Run every command below from the repository root. Each script finds the subject folders there, or in the folder named by `STS_ROOT`.
 
@@ -50,7 +50,8 @@ Run every command below from the repository root. Each script finds the subject 
 | 6a. Hip/trunk correction for 1106151 | `python scripts/make_hipdoubled_model.py` | `Subject_1106151_hipdoubled.osim`, `Subject_1106151_RRA_r2_hd.osim` (provided) |
 | 6b. Static optimization, all conditions (216 runs) | `python scripts/make_jobs.py` then `sh scripts/run_jobs.sh` (set `PYTHON=` to the OpenSim Python if needed) | `Subject_<ID>/SO_<tag>/`, `so_<tag>.log` |
 | 7. Onset summary | `python scripts/summarize_onset.py` | `results/SO_all_scenarios_summary.csv` |
-| 8. Table values | `python scripts/peak_moments.py`, `python scripts/deficit_stats.py`, `python scripts/summ_rra.py`, `python scripts/strategy.py`, `python scripts/make_supplementary_table.py` | see the table below |
+| 8. Table values | `python scripts/peak_moments.py`, `python scripts/deficit_stats.py`, `python scripts/summ_rra.py`, `python scripts/strategy.py`, `python scripts/make_supplementary_table.py`, `python scripts/deficit_timing.py` | see the table below |
+| 8a. Sensitivity to filtering and window | `cat jobs_sens.txt \| xargs -P 2 -L 1 sh -c 'cd Subject_$0 && SO_MAXIT=3000 SO_MODEL=$5 SO_LP=$6 python ../scripts/run_so.py $0 $1 $2 $3 $4 > so_$4.log 2>&1'` then `python scripts/sensitivity_summary.py` | `results/sensitivity_onset.csv` |
 | 9. Figures | `python figures/make_fig1_fig2.py`, `python figures/make_fig3.py` | `figures/fig1.png` to `fig3.png` |
 
 ## Where each result in the paper comes from
@@ -65,6 +66,8 @@ Run every command below from the repository root. Each script finds the subject 
 | Table 3: trunk inclination, knee-to-hip moment ratio | `strategy.py` | `results/trunk_strategy.csv` |
 | Table 4: onset after RRA, kinematic adjustment | `summ_rra.py` | `results/table4_rra_onset_and_adjustment.csv` |
 | Table 5: interlimb NSI; pelvis residuals | `residuals_asym.py` | `results/asymmetry_NSI_rise.csv`, `results/residuals_rise.csv` |
+| Timing and direction of each deficit at onset |`deficit_timing.py` | `results/deficit_timing.csv` |
+| Sensitivity to filter cut-off (4/8 Hz) and window boundaries | `sensitivity_summary.py` | `results/sensitivity_onset.csv` |
 | Supplementary Table S1: all strength conditions | `make_supplementary_table.py` | `results/Supplementary_Table_S1.csv` |
 | Figure 1 | `figures/make_fig1_fig2.py` | `figures/fig1.png` |
 | Figure 2 | `figures/make_fig1_fig2.py` | `figures/fig2.png` |
